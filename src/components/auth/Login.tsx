@@ -6,8 +6,8 @@ const Login = () => {
     return (
         <Fieldset.Root size="sm" maxW="md">
             <Fieldset.Content>
-                <Field label="Email address" required>
-                    <Input name="email" type="email" />
+                <Field label="Name" required>
+                    <Input name="name" type="text" />
                 </Field>
                 <Field label="Password" required>
                     <PasswordInput name="password" />

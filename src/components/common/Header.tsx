@@ -26,7 +26,7 @@ const Header = (props: Record<string, unknown>) => {
       justify="space-between"
       wrap="wrap"
       padding={6}
-      bg="teal.500"
+      bg="#4682B4"
       color="white"
       {...props}
     >

@@ -4,6 +4,10 @@ import Demo from "@/pages/Demo.tsx";
 import Auth from "@/pages/Auth.tsx";
 import Layout from './components/common/Layout';
 
+import Faculty from './pages/dashboard/admin/faculty';
+import Students from './pages/dashboard/admin/User';
+import UserUpdate from './pages/dashboard/admin/userUpdate';
+
 const AppRoutes = () => {
     return (
         <BrowserRouter>
@@ -12,7 +16,9 @@ const AppRoutes = () => {
                     <Route path="/" element={<Auth />}/>
                     <Route element={<Layout />} >
                         <Route path="/dashboard" element={<Demo />}/>
-                        {/* <Route path="/user" element={<User />}/> */}
+                        <Route path="/students" element={<Students />}/>
+                        <Route path="/faculty" element={<Faculty />}/>
+                        <Route path="/userupdate" element={<UserUpdate />}/>
                     </Route>
                 </Routes>
             </Suspense>
