@@ -17,7 +17,7 @@ export default function Auth() {
             <div className="h-[calc(100vh-80px)] pt-14">
                 <div className="max-w-[600px] mx-auto bg-white py-12 px-16 rounded-2xl shadow-auth">
                     <Heading as="h2" size="lg" textAlign="center" mb="6">
-                        Welcome to authentication
+                        Welcome to CBST digital campus
                     </Heading>
                     <Tabs.Root defaultValue="login">
                         <Tabs.List>

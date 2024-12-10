@@ -13,7 +13,7 @@ const LocalStorage = {
 	 * @param {*} exp : token expire time in minutes
 	 * @param {*} identity : user data to store
 	 */
-	persisLogin: function (access_token : string, exp: string, identity: Record<string, unknown>) {
+	persisLogin: function (access_token : string, identity: Record<string, unknown>) {
 		// const convertToMilliseconds = expires_in_minutes * 60 * 1000;
 		// const expiration = new Date().getTime() + convertToMilliseconds;
 
