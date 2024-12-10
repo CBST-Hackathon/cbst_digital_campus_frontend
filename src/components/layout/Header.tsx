@@ -4,11 +4,7 @@ import {
   Heading,
   Flex,
   Text,
-  Button,
-  MenuContent,
-  MenuItem,
-  MenuRoot,
-  MenuTrigger,
+  Button
   // useDisclosure
 } from "@chakra-ui/react";
 // import { HamburgerIcon } from "@chakra-ui/icons";
@@ -52,20 +48,9 @@ const Header = (props: Record<string, unknown>) => {
         mt={{ base: 4, md: 0 }}
       >
         <Text>User</Text>
-        <MenuRoot>
-          <MenuTrigger asChild>
-            <Button variant="outline" size="sm">
-              Open
-            </Button>
-          </MenuTrigger>
-          <MenuContent>
-            <MenuItem value="new-txt">New Text File</MenuItem>
-            <MenuItem value="new-file">New File...</MenuItem>
-            <MenuItem value="new-win">New Window</MenuItem>
-            <MenuItem value="open-file">Open File...</MenuItem>
-            <MenuItem value="export">Export</MenuItem>
-          </MenuContent>
-        </MenuRoot>
+        <Button variant="outline" size="sm">
+              Logout
+        </Button>
       </Stack>
       </Box>
     </Flex>

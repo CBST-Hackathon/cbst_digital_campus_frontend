@@ -3,7 +3,7 @@ import { Field } from "@/components/ui/field"
 import { Box, Button, Fieldset,  Heading, Input } from "@chakra-ui/react";
 
 
-function UserUpdate() {
+function UserUpdateForm() {
     return ( 
         <Box background="" width="100%" padding="4">
             <Heading w="80%" textAlign={'center'} fontWeight="normal" mb="2%">
@@ -47,4 +47,4 @@ function UserUpdate() {
      );
 }
 
-export default UserUpdate;
+export default UserUpdateForm;
