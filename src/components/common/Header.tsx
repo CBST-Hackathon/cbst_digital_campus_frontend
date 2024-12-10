@@ -1,111 +1,75 @@
-// import {
-//   Button,
-//   // forwardRef,
-//   IconButton,
-//   Menu,
-//   // MenuButton,
-//   MenuItem,
-//   // MenuList,
-// } from '@chakra-ui/react'
-// // import { Link, router } from '@inertiajs/react'
-// import axios from 'axios'
-// import { ArrowDown2, HambergerMenu, ProfileCircle } from 'iconsax-react'
-// // import { useTranslation } from 'react-i18next'
-// import { toast } from 'sonner'
-// // import NotificationButton from '../Admin/Notification/NotificationButton'
-// // import LangSwitcher from './LangSwitcher'
-// // import { User } from '@/types'
-// // import { ForwardedRef } from 'react'
+import {
+  Box,
+  Stack,
+  Heading,
+  Flex,
+  Text,
+  Button,
+  MenuContent,
+  MenuItem,
+  MenuRoot,
+  MenuTrigger,
+  // useDisclosure
+} from "@chakra-ui/react";
+// import { HamburgerIcon } from "@chakra-ui/icons";
 
-// export const Header = forwardRef(
-//   (
-//     {
-//       setIsExpanded,
-//       isExpanded,
-//       title,
-//       user,
-//     }: {
-//       setIsExpanded: Function
-//       isExpanded: boolean
-//       title: string
-//       user: User
-//     },
-//     ref
-//   ) => {
-//     // const { t } = useTranslation()
+const Header = (props: Record<string, unknown>) => {
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+  // const handleToggle = () => (isOpen ? onClose() : onOpen());
+  // const { open, }
+  const isOpen = true
 
-//     const handleLogout = async () => {
-//       // try {
-//       //   const { data } = await axios.post('/api/auth/logout')
-//       //   if (data?.message) {
-//       //     router.visit('/login')
-//       //   }
-//       // } catch (e) {
-//       //   toast.error('Failed to logout')
-//       // }
-//     }
+  return (
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      padding={6}
+      bg="teal.500"
+      color="white"
+      {...props}
+    >
+      <Flex align="center" mr={5}>
+        <Heading as="h1" size="lg" letterSpacing={"tighter"}>
+          CBST Digital Campus
+        </Heading>
+      </Flex>
 
-//     return (
-//       <div className="min-h-[76px] flex justify-between border-b border-black/10 bg-white w-full items-center gap-2 px-4">
-//         <div>
-//           {user?.roleId === 4 || user?.roleId === 5 ? (
-//             <div className="h-[76px] flex items-center justify-center">
-//               <a href="/" className="flex items-center justify-center">
-//                 <img
-//                   src={isExpanded ? '/get-pasto.png' : '/get-pasto-mini.png'}
-//                   alt="Get pasto logo"
-//                   className="h-10"
-//                 />
-//               </a>
-//             </div>
-//           ) : (
-//             <div className="flex items-center gap-4">
-//               <IconButton
-//                 aria-label={'Toggle'}
-//                 className="size-12 rounded-full bg-white shadow-primary gp-transition"
-//                 // icon={<HambergerMenu size="20" />}
-//                 // _icon={'icon'}
-//                 onClick={() => setIsExpanded(!isExpanded)}
-//                 ref={ref}
-//               />
-//               <p className="text-secondary-500 font-medium text-lg hidden sm:inline-block">
-//                 {t(title)}
-//               </p>
-//             </div>
-//           )}
-//         </div>
-//         <div className="flex items-center gap-2">
-//           {/* <NotificationButton /> */}
+      <Box display={{ base: "block", md: "none" }}>
+        Hambarger
+      </Box>
+      <Box
+        display={{ base: isOpen ? "block" : "none", md: "block" }}
+        mt={{ base: 4, md: 0 }}
+      >
+      <Stack
+        direction={{ base: "column", md: "row" }}
+        display={{ base: isOpen ? "block" : "none", md: "flex" }}
+        width={{ base: "full", md: "auto" }}
+        alignItems="center"
+        flexGrow={1}
+        mt={{ base: 4, md: 0 }}
+      >
+        <Text>User</Text>
+        <MenuRoot>
+          <MenuTrigger asChild>
+            <Button variant="outline" size="sm">
+              Open
+            </Button>
+          </MenuTrigger>
+          <MenuContent>
+            <MenuItem value="new-txt">New Text File</MenuItem>
+            <MenuItem value="new-file">New File...</MenuItem>
+            <MenuItem value="new-win">New Window</MenuItem>
+            <MenuItem value="open-file">Open File...</MenuItem>
+            <MenuItem value="export">Export</MenuItem>
+          </MenuContent>
+        </MenuRoot>
+      </Stack>
+      </Box>
+    </Flex>
+  );
+};
 
-//           {/* <LangSwitcher /> */}
-
-//           <Menu placement="bottom-end">
-//             <MenuButton
-//               as={Button}
-//               className="h-12 rounded-full px-0 bg-white shadow-primary gp-transition"
-//             >
-//               <div className="flex md:hidden items-center px-3 py-2 gap-2">
-//                 <ProfileCircle />
-//               </div>
-
-//               <div className="hidden md:flex items-center px-6 py-2 gap-2">
-//                 <div className="flex flex-col items-end">
-//                   <span className="font-bold">{user?.fullName}</span>
-//                   <span className="text-xs font-medium">{user?.role?.name}</span>
-//                 </div>
-//                 <ArrowDown2 size="24" />
-//               </div>
-//             </MenuButton>
-//             <MenuList className="p-1">
-//               <MenuItem onClick={handleLogout}>{t('Logout')}</MenuItem>
-//             </MenuList>
-//           </Menu>
-//         </div>
-//       </div>
-//     )
-//   }
-// )
-
-// Header.displayName = 'Header'
-
-// export default Header
+export default Header;

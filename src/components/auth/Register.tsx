@@ -2,18 +2,15 @@ import { Field } from "@/components/ui/field"
 import { Input, Fieldset, Button, Textarea } from "@chakra-ui/react"
 import { PasswordInput } from "../ui/password-input"
 import { Radio, RadioGroup } from "../ui/radio"
-import React from "react"
+// import React, { SetStateAction } from "react"
 
-
-
-    
 
 const Register = () => {
-    const [value, setValue] = React.useState("male");
+    // const [value, setValue] = React.useState("male");
 
-    const handleRadioChange = (newValue) => {
-        setValue(newValue); 
-      };
+    // const handleRadioChange = (newValue: SetStateAction<string>) => {
+    //     setValue(newValue); 
+    //   };
 
     return (
       <Fieldset.Root size="sm" maxW="md">
@@ -35,10 +32,9 @@ const Register = () => {
                 <PasswordInput name="password" />
           </Field>
           <Field label="Gender">
-            <RadioGroup value={value} onChange={handleRadioChange}  >
+            <RadioGroup value={'male'} >
                 <Radio value="male">Male</Radio>
                 <Radio value="female">Female</Radio>
-                <Radio value="other">Other</Radio>
             </RadioGroup>
           </Field>
           <Field label="Date of Birth">
